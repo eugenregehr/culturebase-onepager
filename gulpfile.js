@@ -12,8 +12,6 @@ const gulp = require('gulp'),
     pug = require('gulp-pug'),
     replace = require('gulp-replace');
 
-const injectSvgOptions = { base: '/' };
-
 const distpath = './dist';
 const publicpath = '/culturebase-onepager/dist/';
 
@@ -77,8 +75,8 @@ gulp.task('scripts', (done) => {
 //pug
 gulp.task('pug', (done) => {
     gulp.src('./src/pug/pages/*.pug')
-        .pipe(injectSvg(injectSvgOptions))
         .pipe(pug())
+        .pipe(injectSvg({ base: './' }))
         .pipe(gulp.dest("."));
     done();
 });
