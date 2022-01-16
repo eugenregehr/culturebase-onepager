@@ -1,0 +1,7 @@
+extends ../layout/_default.pug
+
+block content 
+	include ../components/header.pug
+	main 
+		#fullpage
+			include ../components/hero.pug

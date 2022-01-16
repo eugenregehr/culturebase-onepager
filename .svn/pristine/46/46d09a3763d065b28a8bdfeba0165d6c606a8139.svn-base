@@ -1,0 +1,32 @@
+include ../mixins/section.pug 
++section(null, "#4a187d", "contact-anchor")
+  .container-lg
+      .section__inner.section__inner--fluid
+        .contact
+          .row.align-items-center
+            .col-xl
+              h2 Casper Heinemann 
+              span Design / Neue Medien 
+            .col-xl
+              .contact__box 
+                span.contact__box__title Kontakt 
+                .row
+                  .col-md
+                    span.contact__box__address Karl-Kunger-Str. 58
+                    span.contact__box__address 12345 Berlin 
+                    span.contact__box__address Tel: +49 179 1337763
+                    a.contact__box__link-mail(href="mailto:mail@mail.de") E-Mail Kontakt 
+                  .col-md
+                    ul.contact__box__list 
+                      li
+                        include ../mixins/linkicon.pug 
+                        +linkicon("caparheinemann.com", "dist/img/icons/link.svg", "http://google.com")
+                      li  
+                        include ../mixins/linkicon.pug 
+                        +linkicon("facebook", "dist/img/icons/facebook.svg", "http://google.com")
+                      li
+                        include ../mixins/linkicon.pug 
+                        +linkicon("vimeo", "dist/img/icons/vimeo.svg", "http://google.com")
+                      li
+                        include ../mixins/linkicon.pug 
+                        +linkicon("youtube", "dist/img/icons/youtube.svg", "http://google.com")

@@ -1,0 +1,15 @@
+import "fullpage.js/vendors/scrolloverflow"
+import fullpageJS from "fullpage.js"
+
+const fullpage = () => {
+    new fullpageJS('#fullpage', {
+        //options here
+        scrollOverflow: true,
+        scrollingSpeed: 1000,
+        scrollOverflowOptions: {
+            disablePointer: true
+        }
+    });
+}
+
+export default fullpage  

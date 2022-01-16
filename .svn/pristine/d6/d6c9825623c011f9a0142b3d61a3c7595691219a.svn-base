@@ -1,0 +1,16 @@
+header.header
+  include ../mixins/section.pug 
+  +section(background_url)
+    .header__logo
+      img(src="dist/img/logo.png")
+  
+  button.header__nav-icon(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasRight' aria-controls='offcanvasRight')
+    span
+    span
+    span
+  #offcanvasRight.offcanvas.offcanvas-end(tabindex='-1' aria-labelledby='offcanvasRightLabel')
+    .offcanvas-header
+      h5#offcanvasRightLabel Menu
+      button.btn-close.text-reset(type='button' data-bs-dismiss='offcanvas' aria-label='Close')
+    .offcanvas-body
+      | ... 

@@ -1,0 +1,17 @@
+@mixin title-lg {
+  font-size: 2.5rem;
+  font-weight: $font-medium;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 3.5rem
+  }
+}
+
+@mixin title-md {
+  font-size: 1.8rem;
+  font-weight: $font-medium;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 2rem
+  }
+}

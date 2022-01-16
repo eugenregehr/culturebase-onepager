@@ -1,0 +1,17 @@
+.content {
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__subtitle {
+    @include title-md;
+  }
+
+  &__text {
+    margin-top: 1.5rem;
+  }
+
+  h3 {
+    margin-top: 1.5rem;
+  }
+}

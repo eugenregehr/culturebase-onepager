@@ -1,0 +1,13 @@
+@import "../../node_modules/fullpage.js/dist/fullpage.css";
+@import "bootstrap/bootstrap";
+@import 'variables';
+@import 'mixins';
+@import 'global';
+
+@import "components/header";
+@import "components/navigation";
+@import "components/section";
+@import "components/content";
+@import "components/hero";
+@import "components/accordion";
+@import "components/video";

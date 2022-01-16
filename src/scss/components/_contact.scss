@@ -1,0 +1,49 @@
+.contact {
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__subtitle {
+    @include title-md;
+  }
+
+  .contact__box {
+    background: rgba($white, 0.9);
+    color: $black;
+    padding: 1rem 1.5rem;
+    margin-top: 4rem;
+
+    @include media-breakpoint-up(xl) {
+      margin-top: 0;
+    }
+
+    &__title {
+      @include title-md;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    &__address {
+      display: block;
+    }
+
+    &__list {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 2rem;
+
+      @include media-breakpoint-up(md) {
+        margin-top: 0;
+      }
+    }
+
+    &__link-mail {
+      color: $black;
+      transition: color $transition-duration ease;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}

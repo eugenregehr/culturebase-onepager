@@ -1,0 +1,3 @@
+script(src="/dist/js/runtime.bundle.js")
+script(src="/dist/js/main.bundle.js")
+script(src="/dist/js/vendors.bundle.js")

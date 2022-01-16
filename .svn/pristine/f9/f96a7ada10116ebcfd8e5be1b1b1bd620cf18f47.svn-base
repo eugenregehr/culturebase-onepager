@@ -1,0 +1,30 @@
+- var background_url_slide1 = "/dist/img/backgrounds/bg-1.jpg";
+- var background_url_slide2 = "/dist/img/backgrounds/bg-2.jpg";
+
+include ../mixins/section.pug 
++section(null, null, "slides-anchor")
+  include ../mixins/slide.pug 
+  //- +slide(background_url_slide1)
+  //-   include ../mixins/content.pug
+  //-   +content({
+  //-     title: "Title Slider H2",
+  //-     subtitle: "Subtitle",
+  //-     text: "<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi</p><p>at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi</p>"
+  //-   }) 
+  +slide(background_url_slide2) 
+    include ../mixins/video.pug
+    +video({
+        id: "unter_dem_eis",
+        title: "Unter dem Eis", 
+        subtitle: "<strong>Regie</strong> Alix Francios Meier",
+        video_src: "https://v.culturebase.org/w/a/k/e/_/wake_up_freak_out_then_get_a_grip.2009.film.lang_en.mp4.mp4?t=1642078883&sig=bg2rSStS8seTC5xCWTcLmw"
+      }) 
+  +slide(background_url_slide2) 
+    include ../mixins/video.pug
+    +video({
+        id: "unter_dem_eis_2",
+        title: "Unter dem Eis 2", 
+        subtitle: "<strong>Regie</strong> Alix Francios Meier",
+        video_src: "https://v.culturebase.org/w/a/k/e/_/wake_up_freak_out_then_get_a_grip.2009.film.lang_en.mp4.mp4?t=1642078883&sig=bg2rSStS8seTC5xCWTcLmw"
+      }) 
+      

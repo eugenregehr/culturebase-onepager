@@ -1,0 +1,27 @@
+mixin video(video)
+  .video
+    .video__modal-button(data-bs-toggle="modal" data-bs-target="#" + video.id)
+      .row.align-items-start
+        .col-xs-auto
+          img.video__modal-button__icon(src="dist/img/icons/play-button.svg") 
+        .col-xs-auto
+          h2.video__modal-button__title= video.title
+          span.video__modal-button__subtitle!= video.subtitle
+    .video__modal
+      .modal.fade(id=video.id aria-hidden="true" tabindex="-1")
+        .modal-dialog.modal-fullscreen
+          .modal-content 
+            .modal-body
+              button.btn-close(type="button" data-bs-dismiss="modal" aria-label="Close")
+              video.video__modal__source(src=video.video_src controls=true)
+    //- .video__info-button(data-bs-toggle="offcanvas" data-bs-target="#"+ video.id aria-controls=video.id)
+    //-   .row.align-items-center
+    //-     .col-xs-auto.px-0
+    //-       img.video__info-button__icon(src="dist/img/icons/info-icon.svg") 
+    //-     .col-xs-auto
+    //-       span.video__info-button__title Filmdetails
+    //- .video__info
+    //-   .offcanvas.offcanvas-start.video-info-canvas(tabindex="-1" id=video.id aria-labelledby=video.id + "_label")
+    //-     .offcanvas-header
+    //-       h5(id=video.id + "_label")= video.title
+    //-       button.btn-close(type="button" data-bs-dismiss="offcanvas" aria-label="Close")

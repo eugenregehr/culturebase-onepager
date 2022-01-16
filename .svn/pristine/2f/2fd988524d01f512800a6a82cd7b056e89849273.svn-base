@@ -1,0 +1,10 @@
+import 'bootstrap';
+import Fullpage from './components/fullpage';
+import Offcanvas from './components/offcanvas';
+import Collapse from './components/collapse';
+import Modal from './components/modal';
+
+Fullpage();
+Offcanvas();
+Collapse();
+Modal(); 

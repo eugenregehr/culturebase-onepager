@@ -1,0 +1,5 @@
+import fullpage from './components/fullpage';
+import offcanvas from './components/offcanvas';
+
+fullpage();
+offcanvas()

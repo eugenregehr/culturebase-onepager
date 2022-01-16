@@ -1,0 +1,8 @@
+import { Offcanvas } from "bootstrap";
+
+const offcanvas = () => {
+  let myOffcanvas = document.getElementById('offcanvasRight');
+  Offcanvas(myOffcanvas).show();
+}
+
+export default offcanvas 

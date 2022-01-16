@@ -1,0 +1,25 @@
+include ../mixins/section.pug 
+include ../mixins/slide.pug
+include ../mixins/video.pug
+include ../mixins/videoinfo.pug
+
++section(null, null, "video-anchor")
+  +slide("/dist/img/backgrounds/bg-4.jpg")
+    +video({
+        id: "video_id_3",
+        title: "Video Section", 
+        subtitle: "<strong>With</strong> Video-Info and Background",
+        video_src: "https://v.culturebase.org/w/a/k/e/_/wake_up_freak_out_then_get_a_grip.2009.film.lang_en.mp4.mp4?t=1642078883&sig=bg2rSStS8seTC5xCWTcLmw"
+      })
+    +videoinfo({id: "info_2", title: "Video Info Title"})
+      p <strong>Ut wisi enim ad minim</strong> veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi
+
+      h2 Headline H2
+      p Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+  +slide(null, "#4a187d")
+    +video({
+        id: "video_id_1",
+        title: "Video Section", 
+        subtitle: "<strong>With</strong> Background Color",
+        video_src: "https://v.culturebase.org/w/a/k/e/_/wake_up_freak_out_then_get_a_grip.2009.film.lang_en.mp4.mp4?t=1642078883&sig=bg2rSStS8seTC5xCWTcLmw"
+      })

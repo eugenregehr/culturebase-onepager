@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600&display=swap');
+
+// font
+$font-light: 200;
+$font-medium: 400;
+$font-bold: 600;
+
+// section
+$section-inner-max-width: 50rem;
+
+// colors
+$white: #fff;
+$black: #000;
+
+// z-index
+$z-header: 1000;

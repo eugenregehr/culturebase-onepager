@@ -1,0 +1,19 @@
+mixin accordion(accordion_id, accordion_item)
+  .accordion(id=accordion_id)
+    each item, index in accordion_item 
+      if index == 0
+        .accordion-item
+          h2.accordion-header(id="heading_0")
+            button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#collapse_0' aria-expanded='true' aria-controls='collapse_0')
+              h3.accordion__title= item.title
+          .accordion-collapse.collapse.show(id="collapse_0" aria-labelledby='heading_0' data-bs-parent='#' + accordion_id)
+            .accordion-body
+              p!= item.content
+      else
+        .accordion-item
+          h2.accordion-header(id="heading_" + index)
+            button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse_' + index aria-expanded='false' aria-controls='collapse_' + index)
+              h3.accordion__title= item.title
+          .accordion-collapse.collapse(id="collapse_" + index aria-labelledby='heading_' + index data-bs-parent='#' + accordion_id)
+            .accordion-body
+              p!= item.content

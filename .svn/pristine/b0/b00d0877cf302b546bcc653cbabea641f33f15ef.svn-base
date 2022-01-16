@@ -1,0 +1,17 @@
+.section {
+  &__background-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__inner {
+    max-width: $section-inner-max-width;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    main & {
+      padding-top: 15rem;
+    }
+  }
+
+}

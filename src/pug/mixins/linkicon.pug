@@ -1,0 +1,7 @@
+mixin linkicon(title, icon_url, url)
+  a.link-icon(href=url)
+    .row.align-items-center.m-0
+      .col-xs-auto.p-0
+        img.link-icon__icon(src=icon_url)
+      .col-xs
+        span.link-icon__title(href=url)= title 

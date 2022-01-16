@@ -1,0 +1,14 @@
+mixin videoinfo(info)
+  .video-info
+    .video-info__button(data-bs-toggle="offcanvas" data-bs-target="#" + info.id aria-controls=info.id)
+      .row.align-items-center
+        .col-xs-auto.px-0
+          img.video-info__icon(src="dist/img/icons/info-icon.svg")
+        .col-xs-auto
+          span.video-info__title Filmdetails
+    .offcanvas.offcanvas-start.video-info__canvas(tabindex="-1" id=info.id aria-labelledby=info.id + "Label")
+      .offcanvas-header
+        h5(id=info.id + "Label")= info.title
+        button.btn-close(type="button" data-bs-dismiss="offcanvas" aria-label="Close") 
+      .offcanvas-body
+        block

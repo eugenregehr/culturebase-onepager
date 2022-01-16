@@ -1,0 +1,11 @@
+mixin section(background_image)
+  if background_image
+    section.section.section__background-image(style="background-image: url(" + background_image + ")")
+      .container-lg
+        .section__inner
+          block 
+  else
+    section.section
+      .container-lg 
+        .section__inner
+          block

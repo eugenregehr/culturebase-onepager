@@ -1,0 +1,37 @@
+body {
+  font-weight: $font-medium;
+  font-size: 1.1rem;
+  -webkit-font-smoothing: antialiased;
+  color: $white;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1.25rem;
+  }
+}
+
+main {
+  position: relative;
+
+  &.modal-active {
+    z-index: $z-main-modal-active;
+
+    .fp-slides {
+      z-index: $z-main-modal-active;
+    }
+  }
+}
+
+h1,
+h2 {
+  @include title-lg;
+}
+
+h3 {
+  @include title-md;
+}
+
+
+// fullpagejs
+.fp-tableCell {
+  position: relative;
+}

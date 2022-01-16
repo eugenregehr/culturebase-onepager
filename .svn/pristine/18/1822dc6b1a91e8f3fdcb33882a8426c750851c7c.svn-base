@@ -1,0 +1,16 @@
+mixin video(video)
+  .video
+    .video__modal-button(data-bs-toggle="modal" data-bs-target="#" + video.id)
+      .row.align-items-start
+        .col-xs-auto
+          img.video__modal-button__icon(src="dist/img/icons/play-button.svg" loading="lazy") 
+        .col-xs-auto
+          h2.video__modal-button__title= video.title
+          span.video__modal-button__subtitle!= video.subtitle
+    .video__modal
+      .modal.fade(id=video.id aria-hidden="true" tabindex="-1")
+        .modal-dialog.modal-fullscreen
+          .modal-content 
+            .modal-body
+              button.btn-close(type="button" data-bs-dismiss="modal" aria-label="Close")
+              video.video__modal__source(src=video.video_src controls=true)

@@ -1,0 +1,74 @@
+body {
+  font-weight: $font-medium;
+  font-size: 1.1rem;
+  -webkit-font-smoothing: antialiased;
+  color: $white;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1.25rem;
+  }
+}
+
+main {
+  position: relative;
+
+  &.modal-active {
+    z-index: $z-main-modal-active;
+
+    .fp-slides {
+      z-index: $z-main-modal-active;
+    }
+  }
+}
+
+
+h1,
+h2,
+h3 {
+  font-weight: $font-medium;
+}
+
+h1,
+h2 {
+  @include title-lg;
+}
+
+h3 {
+  @include title-md;
+}
+
+strong {
+  font-weight: $font-black;
+}
+
+
+.content-format {
+
+  h2,
+  h3 {
+    font-weight: $font-bold;
+  }
+
+  h2 {
+    @include title-md;
+  }
+
+  h3 {
+    @include title-sm;
+  }
+
+  p+h3,
+  p+h2 {
+    margin-top: 2rem;
+  }
+
+  a {
+    color: $white;
+  }
+}
+
+
+// fullpagejs
+.fp-tableCell {
+  position: relative;
+}

@@ -1,0 +1,27 @@
+.section {
+  &__background-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__inner {
+    max-width: $section-inner-max-width;
+    padding-left: 1.5rem;
+    padding-right: 3rem;
+
+    @include media-breakpoint-up(sm) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    main & {
+      padding-top: 10rem;
+      padding-bottom: 3rem;
+
+      @include media-breakpoint-up(sm) {
+        padding-top: 13rem;
+      }
+    }
+  }
+
+}

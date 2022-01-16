@@ -1,0 +1,24 @@
+header.header
+  include ../mixins/section.pug 
+  +section
+    .container-lg
+      .section__inner
+        .header__logo
+          img(src="dist/img/logo.png")
+  
+  button.header__nav-icon(type='button' data-bs-toggle='offcanvas' data-bs-target='#navigationRight' aria-controls='navigationRight') 
+    span
+    span
+    span
+  #navigationRight.offcanvas.offcanvas-end(tabindex='-1' aria-labelledby='navigationRightLabel')
+    .offcanvas-header.justify-content-end
+      button.btn-close.text-reset(type='button' data-bs-dismiss='offcanvas' aria-label='Close')
+    .offcanvas-body.header__body
+      ul#navigation.navigation
+        li.active.navigation__list(data-menuanchor="hero-anchor")
+          a.navigation__link(href="#hero-anchor") Hero
+        li.navigation__list(data-menuanchor="accordion-anchor") 
+          a.navigation__link(href="#accordion-anchor") Accordion
+        li.navigation__list(data-menuanchor="slides-anchor") 
+          a.navigation__link(href="#slides-anchor") Slides
+

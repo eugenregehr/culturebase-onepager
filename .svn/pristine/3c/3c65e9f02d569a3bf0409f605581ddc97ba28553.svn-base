@@ -1,0 +1,30 @@
+include ../mixins/section.pug 
+include ../mixins/linkicon.pug 
+
++section("dist/img/backgrounds/bg-6.jpg", null, "contact-anchor")
+  .container-lg
+    .section__inner.section__inner--fluid
+      .contact
+        .row.align-items-center
+          .col-xl
+            h2.contact__title Casper Heinemann 
+            span.contact__subtitle Art Director / Film
+          .col-xl
+            .contact__box 
+              span.contact__box__title Kontakt 
+              .row
+                .col-md
+                  span.contact__box__address Karl-Kunger-Str. 58
+                  span.contact__box__address 12345 Berlin 
+                  span.contact__box__address Tel: +49 179 1337763
+                  a.contact__box__link-mail(href="mailto:mail@mail.de") E-Mail Kontakt 
+                .col-md
+                  ul.contact__box__list 
+                    li
+                      +linkicon("website", "dist/img/icons/link.svg", "http://google.com")
+                    li  
+                      +linkicon("facebook", "dist/img/icons/facebook.svg", "http://google.com")
+                    li
+                      +linkicon("vimeo", "dist/img/icons/vimeo.svg", "http://google.com")
+                    li
+                      +linkicon("youtube", "dist/img/icons/youtube.svg", "http://google.com")

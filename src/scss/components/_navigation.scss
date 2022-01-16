@@ -1,0 +1,80 @@
+.navigation {
+  text-align: right;
+  list-style: none;
+
+  &__link {
+    font-size: 1.6rem;
+    color: $black;
+    text-decoration: none;
+    padding: 0.25rem 0;
+    display: block;
+
+    .active & {
+      color: $primary;
+    }
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+// fullpage.js navigation
+#fp-nav {
+  top: auto;
+  bottom: 0;
+
+  ul li a span {
+    background: $white;
+  }
+}
+
+.fp-slidesNav.fp-bottom {
+  text-align: center;
+
+  ul li a span {
+    background: $white;
+  }
+}
+
+.section .fp-controlArrow {
+  border-color: $white;
+  border-style: solid;
+  height: 1rem;
+  width: 1rem;
+  margin: 0;
+  padding: 0;
+  background: none;
+
+  @include media-breakpoint-up(sm) {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+.fp-controlArrow.fp-next {
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  transform: rotate(-45deg);
+  right: 13px;
+
+  @include media-breakpoint-up(lg) {
+    right: 20px;
+  }
+
+}
+
+.fp-controlArrow.fp-prev {
+  border-top-width: 2px;
+  border-left-width: 2px;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  transform: rotate(-45deg);
+  left: 13px;
+
+  @include media-breakpoint-up(lg) {
+    left: 20px;
+  }
+}

@@ -1,0 +1,16 @@
+mixin slide(background_image, background_color)
+  if background_image
+    .slide.section__slide(style="background-image: url(" + background_image + ")")
+      .container-lg
+        .section__inner 
+          block
+  else if background_color
+    .slide.section__slide(style="background-color: " + background_color)
+      .container-lg
+        .section__inner 
+          block
+  else
+    .slide.section__slide
+      .container-lg
+        .section__inner 
+          block

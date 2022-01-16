@@ -1,0 +1,10 @@
+mixin section(background_image, background_color, anchor)
+  if background_image
+    section.section.section__background-image(data-anchor=anchor style="background-image: url(" + background_image + ")")
+      block 
+  else if background_color
+    section.section.section__background-image(data-anchor=anchor style="background-color: " + background_color)
+      block 
+  else
+    section.section(data-anchor=anchor)
+      block

@@ -1,0 +1,34 @@
+include ../mixins/section.pug 
+include ../mixins/slide.pug 
+include ../mixins/content.pug
+
++section(null, null, "content-anchor")
+  +slide(null, "#4a187d")
+    +content({
+        title: "Content Section Short",
+        subtitle: "With Background Color"
+      }) 
+        p Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum <a href="http://google.com" target="_blank">dolore eu facilisis at vero</a> feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit <strong>augue duis dolore</strong> te feugait nulla facilisi at vero eros et accumsan et iusto odio dignissim qui  zzril delenit augue duis dolore te feugait nulla facilisi
+
+        p <strong> Wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </strong> 
+        include ../mixins/slide.pug 
+  +slide(null, "#4a187d")
+    +content({
+        title: "Content Section Long",
+        subtitle: "With Background Color"
+      }) 
+        p Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum <a href="http://google.com" target="_blank">dolore eu facilisis at vero</a> feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit <strong>augue duis dolore</strong> te feugait nulla facilisi at vero eros et accumsan et iusto odio dignissim qui  zzril delenit augue duis dolore te feugait nulla facilisi
+
+        h2 Headline H2
+        p Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum te feugait nulla facilisi at vero eros et accumsan et iusto odio dignissim qui  zzril delenit augue duis dolore te feugait nulla facilisi. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum te feugait nulla facilisi at vero eros et accumsan et iusto odio dignissim qui  zzril delenit augue duis dolore te feugait nulla facilisi. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum te feugait nulla facilisi at vero eros et accumsan et iusto odio dignissim qui  zzril delenit augue duis dolore te feugait nulla facilisi
+
+        p <strong> Wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </strong> 
+
+        h3 Headline H3
+        p nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum te feugait nulla facilisi at vero eros et accumsan et iusto odio dignissim qui  zzril delenit augue duis dolore te feugait nulla facilisi. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum te feugait nulla facilisi at vero eros et accumsan et iusto odio dignissim qui  zzril delenit augue duis dolore te feugait nulla facilisi
+  +slide("dist/img/backgrounds/bg-1.jpg")
+    +content({
+        title: "Content Section Short",
+        subtitle: "With Background Image"
+      }) 
+        p Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum <a href="http://google.com" target="_blank">dolore eu facilisis at vero</a> feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit <strong>augue duis dolore</strong> te feugait nulla facilisi at vero eros et accumsan et iusto odio dignissim qui  zzril delenit augue duis dolore te feugait nulla facilisi

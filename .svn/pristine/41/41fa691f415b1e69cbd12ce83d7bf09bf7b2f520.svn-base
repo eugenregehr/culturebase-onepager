@@ -1,0 +1,12 @@
+extends ../layout/_default.pug
+
+block content 
+	include ../components/header.pug
+	main#main
+		#fullpage
+			include ../components/hero.pug
+			include ../components/content.pug
+			include ../components/video.pug
+			include ../components/accordion.pug
+			include ../components/contact.pug
+			
