@@ -76,7 +76,7 @@ gulp.task('pug', (done) => {
     gulp.src('./src/pug/pages/*.pug')
         .pipe(pug())
         .pipe(injectSvg(injectSvgOptions))
-        .pipe(gulp.dest('./dist/html'));
+        .pipe(gulp.dest('.'));
     done();
 });
 
@@ -103,7 +103,7 @@ gulp.task('all', gulp.series('styles', 'scripts', 'images', 'fonts', 'pug'));
 gulp.task('watch', (done) => {
     browserSync.init({
         server: {
-            index: '/dist/html/index.html'
+            index: 'index.html'
         },
     });
     gulp.watch('./src/pug/**/*.pug', gulp.series('pug', reload));
