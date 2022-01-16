@@ -7,4 +7,4 @@ import Modal from './components/modal';
 Fullpage();
 Offcanvas();
 Collapse();
-Modal();  
+Modal(); 

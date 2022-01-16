@@ -9,9 +9,13 @@ const gulp = require('gulp'),
     cache = require('gulp-cache'),
     browserSync = require('browser-sync').create(),
     injectSvg = require('gulp-inject-svg'),
-    pug = require('gulp-pug');
+    pug = require('gulp-pug'),
+    replace = require('gulp-replace');
 
 const injectSvgOptions = { base: '/' };
+
+const distpath = './dist';
+const publicpath = '/culturebase-onepager/dist/';
 
 // BrowserSync Reload
 function reload(done) {
@@ -22,7 +26,6 @@ function reload(done) {
 gulp.task('clearCache', function (done) {
     return cache.clearAll(done);
 });
-
 
 // css
 gulp.task('css', (done) => {
@@ -41,14 +44,14 @@ gulp.task('css', (done) => {
             grid: true
         }))
         .pipe(rename('styles.css'))
-        .pipe(gulp.dest('./dist/css/'))
+        .pipe(gulp.dest(`${distpath}/css/`))
         .pipe(browserSync.stream());
     done();
 });
 
 // css purify
 gulp.task('purify-css', (done) => {
-    gulp.src('./dist/css/styles.css')
+    gulp.src(`${distpath}/css/styles.css`)
         .pipe(purify([
             './src/**/*.html',
             './**/*.php']
@@ -59,7 +62,7 @@ gulp.task('purify-css', (done) => {
             }
         }))
         .pipe(rename('styles.min.css'))
-        .pipe(gulp.dest('./dist/css/'))
+        .pipe(gulp.dest(`${distpath}/css/`))
     done();
 });
 
@@ -67,16 +70,16 @@ gulp.task('purify-css', (done) => {
 gulp.task('scripts', (done) => {
     gulp.src('./src/js/app.js')
         .pipe(webpack(require('./webpack.config.js')))
-        .pipe(gulp.dest('./dist/js/'));
+        .pipe(gulp.dest(`${distpath}/js/`));
     done();
 });
 
 //pug
 gulp.task('pug', (done) => {
     gulp.src('./src/pug/pages/*.pug')
-        .pipe(pug())
         .pipe(injectSvg(injectSvgOptions))
-        .pipe(gulp.dest('.'));
+        .pipe(pug())
+        .pipe(gulp.dest("."));
     done();
 });
 
@@ -84,30 +87,38 @@ gulp.task('pug', (done) => {
 gulp.task('images', (done) => {
     gulp.src('./src/img/**/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('./dist/img'));
+        .pipe(gulp.dest(`${distpath}/img`));
     done();
 });
 
 // fonts
 gulp.task('fonts', (done) => {
     gulp.src('./src/fonts/**/*')
-        .pipe(gulp.dest('./dist/fonts'));
+        .pipe(gulp.dest(`${distpath}/fonts`));
     done();
 });
 
-gulp.task('styles', gulp.series('css', 'purify-css'));
-gulp.task('default', gulp.series('styles', 'scripts', 'pug'));
-gulp.task('all', gulp.series('styles', 'scripts', 'images', 'fonts', 'pug'));
+// fonts
+gulp.task('add-public-path', (done) => {
+    gulp.src(['./index.html'])
+        .pipe(replace(`/dist/`, `${publicpath}`))
+        .pipe(gulp.dest('.'));
+    done();
+});
+
+gulp.task('build',
+    gulp.series('pug', 'css', 'purify-css', 'scripts', 'images', 'fonts', 'add-public-path')
+);
 
 // watch
 gulp.task('watch', (done) => {
     browserSync.init({
         server: {
-            index: 'index.html'
+            index: `./index.html`
         },
     });
     gulp.watch('./src/pug/**/*.pug', gulp.series('pug', reload));
-    gulp.watch('./src/scss/**/*.scss', gulp.series('styles'));
+    gulp.watch('./src/scss/**/*.scss', gulp.series('css'));
     gulp.watch('./src/js/**/*.js', gulp.series('scripts', 'clearCache', reload));
     gulp.watch('./src/img/**/*', gulp.series('images'));
     gulp.watch('./src/fonts/**/*', gulp.series('fonts'));
