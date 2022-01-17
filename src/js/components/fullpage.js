@@ -9,8 +9,8 @@ const isTouchDevice = () => {
 
 const fullpage = () => {
     new FullpageJS('#fullpage', {
+        // autoScrolling: false,
         menu: "#navigation",
-        // anchors: ['hero', 'accordion', 'slides'],
         navigation: true,
         slidesNavigation: true,
         scrollOverflow: true,
