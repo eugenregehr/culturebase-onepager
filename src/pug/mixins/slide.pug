@@ -1,6 +1,6 @@
 mixin slide(background_image, background_color)
   if background_image
-    .slide.slide--background-image(style="background-image: url(" + background_image + ")")
+    .slide.slide--background-image.lazy(style="background-image: url(" + background_image + ")")
       .container-lg
         .section__inner 
           block

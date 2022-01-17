@@ -2,7 +2,7 @@
 /*!***********************!*\
   !*** ./src/js/app.js ***!
   \***********************/
-/*! no exports provided */function(t,n,e){"use strict";e.r(n);e(/*! bootstrap */"./node_modules/bootstrap/dist/js/bootstrap.esm.js");var r=e(/*! ./components/fullpage */"./src/js/components/fullpage.js"),o=e(/*! ./components/offcanvas */"./src/js/components/offcanvas.js"),a=e(/*! ./components/collapse */"./src/js/components/collapse.js"),i=e(/*! ./components/modal */"./src/js/components/modal.js");Object(r.default)(),Object(o.default)(),Object(a.default)(),Object(i.default)()},"./src/js/components/collapse.js":
+/*! no exports provided */function(t,n,e){"use strict";e.r(n);e(/*! bootstrap */"./node_modules/bootstrap/dist/js/bootstrap.esm.js");var r=e(/*! ./components/fullpage */"./src/js/components/fullpage.js"),o=e(/*! ./components/offcanvas */"./src/js/components/offcanvas.js"),a=e(/*! ./components/collapse */"./src/js/components/collapse.js"),i=e(/*! ./components/modal */"./src/js/components/modal.js"),s=e(/*! ./components/lazyloading */"./src/js/components/lazyloading.js");Object(r.default)(),Object(o.default)(),Object(a.default)(),Object(i.default)(),Object(s.default)()},"./src/js/components/collapse.js":
 /*!***************************************!*\
   !*** ./src/js/components/collapse.js ***!
   \***************************************/
@@ -10,7 +10,11 @@
 /*!***************************************!*\
   !*** ./src/js/components/fullpage.js ***!
   \***************************************/
-/*! exports provided: default */function(t,n,e){"use strict";e.r(n);e(/*! fullpage.js/vendors/scrolloverflow */"./node_modules/fullpage.js/vendors/scrolloverflow.js");var r=e(/*! fullpage.js */"./node_modules/fullpage.js/dist/fullpage.js"),o=e.n(r);n.default=function(){new o.a("#fullpage",{menu:"#navigation",navigation:!0,slidesNavigation:!0,scrollOverflow:!0,scrollingSpeed:1e3,scrollOverflowOptions:{disablePointer:!("ontouchstart"in window||navigator.maxTouchPoints>0||navigator.msMaxTouchPoints>0)}})}},"./src/js/components/modal.js":
+/*! exports provided: default */function(t,n,e){"use strict";e.r(n);e(/*! fullpage.js/vendors/scrolloverflow */"./node_modules/fullpage.js/vendors/scrolloverflow.js");var r=e(/*! fullpage.js */"./node_modules/fullpage.js/dist/fullpage.js"),o=e.n(r);n.default=function(){new o.a("#fullpage",{menu:"#navigation",navigation:!0,slidesNavigation:!0,scrollOverflow:!0,scrollingSpeed:1e3,scrollOverflowOptions:{disablePointer:!("ontouchstart"in window||navigator.maxTouchPoints>0||navigator.msMaxTouchPoints>0)}})}},"./src/js/components/lazyloading.js":
+/*!******************************************!*\
+  !*** ./src/js/components/lazyloading.js ***!
+  \******************************************/
+/*! exports provided: default */function(t,n,e){"use strict";e.r(n);n.default=function(){var t=document.querySelectorAll(".lazy");if("IntersectionObserver"in window){var n=new IntersectionObserver((function(t,e){t.forEach((function(t){if(t.isIntersecting){var e=t.target;e.classList.remove("lazy"),n.unobserve(e)}}))}));t.forEach((function(t){n.observe(t)}))}}},"./src/js/components/modal.js":
 /*!************************************!*\
   !*** ./src/js/components/modal.js ***!
   \************************************/

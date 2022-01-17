@@ -68,8 +68,12 @@ strong {
   }
 }
 
+.lazy {
+  background-image: none !important;
+}
 
-// fullpagejs
+
+// fullpagejs 
 .fp-tableCell {
   position: relative;
 }
