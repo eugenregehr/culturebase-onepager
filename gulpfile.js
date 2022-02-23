@@ -10,10 +10,11 @@ const gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     injectSvg = require('gulp-inject-svg'),
     pug = require('gulp-pug'),
-    replace = require('gulp-replace');
+    replace = require('gulp-replace'),
+    htmlbeautify = require('gulp-html-beautify');
+
 
 const distpath = './dist';
-const publicpath = '/culturebase-onepager/dist/';
 
 // BrowserSync Reload
 function reload(done) {
@@ -96,16 +97,26 @@ gulp.task('fonts', (done) => {
     done();
 });
 
-// fonts
-gulp.task('add-public-path', (done) => {
-    gulp.src(['./index.html'])
-        .pipe(replace(`/dist/`, `${publicpath}`))
+// better html format
+gulp.task('htmlbeautify', (done) => {
+    var options = { indentSize: 2 };
+    gulp.src('./index.html')
+        .pipe(htmlbeautify(options))
         .pipe(gulp.dest('.'));
     done();
 });
 
+// public path
+gulp.task('add-public-path', (done) => {
+    gulp.src(['./index.html'])
+        .pipe(replace(`/dist/`, `/onepager-mockup/dist/`))
+        .pipe(gulp.dest('.'));
+    done();
+});
+
+
 gulp.task('build',
-    gulp.series('pug', 'css', 'purify-css', 'scripts', 'images', 'fonts', 'add-public-path')
+    gulp.series('pug', 'css', 'purify-css', 'scripts', 'images', 'fonts', 'add-public-path', 'htmlbeautify')
 );
 
 // watch
